@@ -1,1 +1,1 @@
-## Experiment name
+## Combinational Logic Design &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="images/iitkgp.png" width="3%" />
