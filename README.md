@@ -23,4 +23,4 @@
 SrNo | Name | Developer / Integration Engineer | Department| Institute
 :--|:--|:--|:--|:--|
 1 | **Parimal Santra** | Developer | Department of Computer Science and Engineering | IIT Kharagpur | 
-2 | **Aditya Kameswara Rao Nandula** | Developer| Department of Mechanical Engineering | IIT Kharagpur | 
+2 | **Aditya Kameswara Rao Nandula** | Integration| Department of Mechanical Engineering | IIT Kharagpur | 
