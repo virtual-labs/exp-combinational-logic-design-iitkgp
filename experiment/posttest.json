@@ -1,39 +1,48 @@
 {
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+    "version": 2.0,
+    "questions": [
+      {
+        "question": "What is the time complexity of ripple carry addition if the sum has n number of bits?",
+        "answers": {
+          "a": "O(nlogn)",
+          "b": "O(1)",
+          "c": "O(n)",
+          "d": "O(logn)"
+        },
+        "correctAnswer": "d",
+        "difficulty": "beginner"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      {
+        "question": "What is the disadvantage of ripple-carry adder?",
+        "answers": {
+          "a": "More stages are required to a full-adder",
+          "b": "The interconnections are more complex",
+          "c": "It is slow due to propagation time",
+          "d": "All of the above are correct"
+        },
+        "correctAnswer": "c",
+        "difficulty": "beginner"
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+      {
+        "question": "Carry of a full adder is a symmetric function",
+        "answers": {
+          "a": "True",
+          "b": "False"
+        },
+        "correctAnswer": "a",
+        "difficulty": "beginner"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+      {
+        "question": "The space complexity of ripple carry adder are respctively",
+        "answers": {
+          "a": "O(logn)",
+          "b": "O(n)",
+          "c": "O(nlogn)",
+          "d": "O(1)"
+        },
+        "correctAnswer": "b",
+        "difficulty": "beginner"
+      }
+    ]
+  }
+  
