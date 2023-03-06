@@ -64,6 +64,7 @@
                         <div id="BITSwitch" class="switch"><input type="button" value="BITSwitch" /></div>
                         <div id="BITDisplay" class="switch"><input type="button" value="BITDisplay" /></div>
                     </div>
+                    <hr/>
                     <div class="menusection">
                         <div class="section">Logic Gates</div>
                         <!-- <div id="OR" class="node"/> background-image="images/Or-gate-en.svg" width="50" height="50"></div> -->
@@ -75,23 +76,53 @@
                         <div id="NAND" class="node"><input type="button" value="NAND" /></div>
                         <div id="NOT" class="node"><input type="button" value="NOT" /></div>                        
                     </div>
+                    <hr/>                    
+                    <div class="menusection">
+                        <div class="section">Clock</div>
+                        <div>
+                            <label for="high_period">High Period(sec)</label>
+                            <input id="high_period" type="text"/><br/>
+                            <label for="low_period">Low Period(sec)</label>
+                            <input id="low_period" type="text"/><br/> 
+                            <div>
+                                <label for="p_level">+level trigger<input name="trigger" id="p_level" value = "1" type="radio"></label>
+                                <label for="n_level">-level trigger<input name="trigger" id="n_level" value = "2"  type="radio"></label>
+                                <label for="p_edge">+edge trigger<input name="trigger" id="p_edge" value = "3" type="radio"></label>
+                                <label for="n_edge">+edge trigger<input name="trigger" id="n_edge" value = "4" type="radio"></label>
+                            </div>
+                            <input type="button" id="add_clock" value="Add Clock" />  
+                        </div>
+                        <div>
+                            <label for="no_of_cycles">No of Cycles</label>
+                            <input id="no_of_cycles" type="text"/><br/>
+                            <input type="button" id="start_clock" value="Start Clock" /> 
+                            <input type="button" id="stop_clock" value="Stop Clock" />
+                        </div>
+                    </div>
+                    <hr/>
                     <div class="menusection">
                         <div class="section">Components</div>   
-                        <input type="file" name="inputfile"
-                               id="inputfile">
+                        <input type="file" id="inputfile">
                         <br>
-
-                        <pre id="output"></pre>
-                        <div class="IC"><input id='comp1' type="button" value="Component1" /></div>                                                
+                        <!-- button to start reading the file -->
+                        <button id="add-component-button">Add Component</button>
+                        <!-- file contents will be placed here -->
+                        <pre id="file-content"></pre>
+                        <input type ='hidden' id="data"/>
                     </div>
+                    <hr/>
                     <div class="menusection">
                         <div class="section">Action</div>                        
                         <div id="sim_btn" class="action">
                             <input type="button" value="SIMULATE" />
                         </div>
+                        <div id="stop_btn" class="action">
+                            <input type="button" value="STOP SIMULATION" />
+                        </div>
                         <div id="save_dc_btn" class="action">
                             <input type="button" value="Save As Component" />
                         </div>
+                        <input id='test' type="button" value="TEST" />
                     </div>                    
                     <div class="menusection">
                         <div class="comp_meta">
@@ -108,23 +139,24 @@
                 </div>
             </div>
         </div>
-        
+
         <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>-->
-        <script src="./js/jquery-3.4.1.js"></script>
-        <script src="./js/FileSaver.js"></script>
-        <script src="./js/canvas.js"></script>
+        <script src="js/jquery-3.4.1.js"></script>
+        <script src="js/FileSaver.js"></script>
+        <script src="js/canvas.js"></script>
         <script type="text/javascript">
-            document.getElementById('inputfile')
-                    .addEventListener('change', function () {
-
-                        var fr = new FileReader();
-                        fr.onload = function () {
-                            document.getElementById('output')
-                                    .textContent = fr.result;
-                        }
-
-                        fr.readAsText(this.files[0]);
-                    })
+            $(document).ready(function () {
+                document.getElementById('inputfile')
+                        .addEventListener('change', function () {
+                            var fr = new FileReader();
+                            fr.readAsText(this.files[0]);
+                            fr.onload = function () {
+                                //document.getElementById("file-content").textContent = fr.result;
+                                document.getElementById('data').value = fr.result;
+                            };
+                            //fr.readAsText(this.files[0]);
+                        });
+            });
         </script>
     </body>
 </html>
