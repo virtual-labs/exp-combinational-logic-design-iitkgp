@@ -59,18 +59,20 @@ The number of gate levels for the carry propagation can be found from the circui
 ## Design Issues:
 
 The corresponding Boolean expressions are given here to construct a carry-lookahead adder. In the carry-lookahead circuit we ned to generate the two signals carry propagator(P) and carry generator(G),
-
-$$P_i = A_i ⊕ B_i$$
-
-$$G_i = A_i · B_i$$
-
+<center>
+P<sub>i</sub> = A<sub>i</sub> ⊕ B<sub>i</sub>
+<br>
+G<sub>i</sub> = A<sub>i</sub> · B<sub>i</sub>
+</center>
 The output sum and carry can be expressed as
-
-$$Sum_i = P_i ⊕ C_i$$
-$$C_{i+1} = G_i + (P_i · C_i)$$
-
+<center>
+Sum<sub>i</sub> = P<sub>i</sub> ⊕ C<sub>i</sub>
+<br>
+C<sub>i+1</sub> = G<sub>i</sub> + (P<sub>i</sub> · C<sub>i</sub>)
+</center>
 Having these we could design the circuit. We can now write the Boolean function for the carry output of each stage and substitute for each Ci its value from the previous equations:
-$$C_1 = G_0 + P_0 · C_0$$
-$$C_2 = G_1 + P_1 · C_1 = G_1 + P_1 · G_0 + P_1 · P_0 · C_0$$
-$$C_3 = G_2 + P_2 · C_2 = G_2 P_2 · G_1 + P_2 · P_1 · G_0 + P_2 · P_1 · P_0 · C_0$$
-$$C_4 = G_3 + P_3 · C_3 = G_3 P_3 · G_2 P_3 · P_2 · G_1 + P_3 · P_2 · P_1 · G_0 + P_3 · P_2 · P_1 · P_0 · C_0$$
+
+C<sub>1</sub> = G<sub>0</sub> + P<sub>0</sub> · C<sub>0</sub> <br>
+C<sub>2</sub> = G<sub>1</sub> + P<sub>1</sub> · C<sub>1</sub> = G<sub>1</sub> + P<sub>1</sub> · G<sub>0</sub> + P<sub>1</sub> · P<sub>0</sub> · C<sub>0</sub> <br>
+C<sub>3</sub> = G<sub>2</sub> + P<sub>2</sub> · C<sub>2</sub> = G<sub>2</sub> P<sub>2</sub> · G<sub>1</sub> + P<sub>2</sub> · P<sub>1</sub> · G<sub>0</sub> + P<sub>2</sub> · P<sub>1</sub> · P<sub>0</sub> · C<sub>0</sub> <br>
+C<sub>4</sub> = G<sub>3</sub> + P<sub>3</sub> · C<sub>3</sub> = G<sub>3</sub> P<sub>3</sub> · G<sub>2</sub> P<sub>3</sub> · P<sub>2</sub> · G<sub>1</sub> + P<sub>3</sub> · P<sub>2</sub> · P<sub>1</sub> · G<sub>0</sub> + P<sub>3</sub> · P<sub>2</sub> · P<sub>1</sub> · P<sub>0</sub> · C<sub>0</sub> <br>
